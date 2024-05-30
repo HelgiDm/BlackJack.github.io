@@ -203,7 +203,16 @@ document.querySelector('.card-back').addEventListener('click', () => {
         document.querySelector('.card-back').lastElementChild.remove();
     }
     else {
-        alert('You need to click "Click to start!" first')
+        cardRandom.makeDeck();
+        cardRandom.vizual();
+        cardRandom.vizual();
+        for (i of yourPick) {
+            cardRandom.sumPick(i)
+        }
+        curScore = cardRandom.score.reduce((a, b) => {return a + b});
+        scoreNumb.innerText = curScore;
+        document.querySelector('.card-back').lastElementChild.remove();
+        document.querySelector('.card-back').lastElementChild.remove();
     }
 })
 
