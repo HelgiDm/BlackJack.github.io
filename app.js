@@ -148,6 +148,9 @@ const cardRandom = {
 cardRandom.vizualCardBack()
 
 //Start-Game Button
+let hints = document.querySelector('.hints');
+let hint = hints.querySelector('div');
+hints.addEventListener('click', () => {hints.style.display = 'none'});
 let curScore = 0;
 let yourPick = [];
 const scoreNumb = document.getElementById('numb');
@@ -168,7 +171,8 @@ startButton.addEventListener('click', () => {
 //        console.log(yourPick,`current score: ${curScore}`);
     }
     else {
-        alert('Game is already started!')
+      hint.innerText = 'Game is already started!';
+      hints.style.display = 'block';
     }
 });
 
@@ -176,7 +180,8 @@ startButton.addEventListener('click', () => {
 const pickCard = document.getElementById('pick-card');
 pickCard.addEventListener('click', () => {
     if (document.querySelector('#dlr-numb').innerText !== '0') {
-        alert("You've already made your turn")
+      hint.innerText = "You've already made your turn";
+      hints.style.display = 'block';
     }
     else if (yourPick.length) {
         const cardImg = document.createElement('img');
@@ -188,8 +193,8 @@ pickCard.addEventListener('click', () => {
 //        console.log(yourPick,`current score: ${parseInt(yourPick)}`)
     }
     else {
-        alert('You need to click "Click to start!" firstly')
-    }
+      hint.innerText = 'You need to click on the "Click to start!" button or on the Deck first';
+      hints.style.display = 'block';    }
 })
 
 // The same with clicking on the card deck
@@ -246,8 +251,8 @@ let yourResult = document.querySelector('.result div');
 let resultWindow = document.querySelector('.result');
 finButton.addEventListener('click', () => {
     if (!yourPick.length) {
-        alert('You need to click "Click to start!" first')
-    }
+      hint.innerText = 'You need to click on the "Click to start!" button or on the Deck first';
+      hints.style.display = 'block';    }
 
     else if (document.querySelector('#dlr-numb').innerText === '0') {
         cardRandom.score = [];
@@ -297,5 +302,8 @@ finButton.addEventListener('click', () => {
             yourPick = [];
           })
     }
-    else {alert('Dealer has already made a turn')}
+    else {
+      hint.innerText = 'Dealer has already made a turn';
+      hints.style.display = 'block';
+    }
 })
