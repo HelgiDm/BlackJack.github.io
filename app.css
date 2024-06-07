@@ -228,6 +228,38 @@ img {
   cursor: pointer;
 }
 
+.hints {
+  width: 100vw;
+  height: 99.99vh;
+  background-color: #00000080;
+/*   display: block; */
+  display: none;
+  z-index: 3;
+  position: absolute;
+}
+
+.hints div {
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  z-index: 4;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #059c41;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.hints:hover {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 1100px) {
   .rules div {
   width: 90vw;
@@ -329,5 +361,10 @@ img {
   height: 10vh;
   font-size: 1.5rem;
 }
-  
+    .hints div {
+  width: 60vw;
+  height: auto;
+  border-radius: 10px;
+  font-size: 1rem;
+}
 }
