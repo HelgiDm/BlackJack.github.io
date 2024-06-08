@@ -270,7 +270,6 @@ finButton.addEventListener('click', () => {
             document.querySelector('.card-back').lastElementChild.remove();
             cardRandom.vizualDlr();
         }
-        document.querySelector('#dlr-numb').innerText = cardRandom.dealerScore()
         console.log(cardRandom.score);
         console.log(cardRandom.dealerScore());
         setTimeout(() => {
@@ -280,6 +279,7 @@ finButton.addEventListener('click', () => {
                     dlrImg.src = card.img;
                     document.querySelector('.dlr-field').append(dlrImg);
                 };
+              document.querySelector('#dlr-numb').innerText = cardRandom.dealerScore();
             setTimeout(() => {
               yourResult.innerText = cardRandom.result();
               resultWindow.style.display = 'block';
