@@ -189,7 +189,8 @@ img {
 }
 
 .card-back img {
-    position: absolute;
+  position: absolute;
+  position: relative;
 }
 
 .card-back:last-child:hover {
