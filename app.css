@@ -185,12 +185,12 @@ img {
 }
 
 .card-back {
-    filter: drop-shadow(10px 10px 8px #213921);
+  filter: drop-shadow(10px 10px 8px #213921);
+  position: relative;
 }
 
 .card-back img {
   position: absolute;
-  position: relative;
 }
 
 .card-back:last-child:hover {
